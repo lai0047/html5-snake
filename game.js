@@ -205,7 +205,7 @@ function loop() {
   }
   setTimeout(function() {
     requestAnimationFrame(loop);
-  }, 1000 / game.fps);
+  }, 600 / game.fps);
 }
 
 requestAnimationFrame(loop);
