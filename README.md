@@ -1,35 +1,43 @@
-# html5-snake
+# HTML5 贪吃蛇游戏
 
-Okay, so I'm up to 2 games in my repertoire. 
+一个基于 HTML5 Canvas 的经典贪吃蛇游戏，纯前端实现，浏览器直接打开即可游玩。
 
-The last game, [lightcycles](https://github.com/JDStraughan/html5-lightcycles), was a great learning experience, and I tried to apply some of the lessons learned there to this game.
+## 运行方法
 
-## Installation
+直接在浏览器中打开 `index.html` 文件即可，无需安装任何依赖。
 
-It's just HTML, CSS, and javascript.  Open it in a modern browser and have fun.
+## 操作说明
 
-Too lazy to download?  [Play it on jsfiddle (may be older version of game)](http://jsfiddle.net/zT7V4/1/).
+| 按键 | 功能 |
+|------|------|
+| 方向键 / WASD / HJKL | 控制蛇的移动方向 |
+| P | 暂停 / 继续游戏 |
+| 空格 / 回车 | 游戏结束后重新开始 |
 
-## Inspiration
+## 游戏规则
 
-[lightcycles](https://github.com/JDStraughan/html5-lightcycles) was a blast to write, and it really made me think about how to make my snake move (hehe).  I decided on making and array, and just shift()ing and push()ing segments.  This is what I ended up with.
+- 控制蛇吃掉食物来增长身体
+- 每吃 5 个食物，游戏速度会加快
+- 蛇撞到墙壁或自身则游戏结束
+- 按空格键或回车键可重新开始
 
-## Contributing
+## 项目结构
 
-You can fork/fix/add/pull request this repo, and I'll gladly add your code ;)
+```
+my-snake/
+├── index.html    # 游戏主页面
+├── game.js       # 游戏逻辑
+├── page.css      # 页面样式
+└── README.md     # 项目说明
+```
 
-## Contributors
+## 改进内容
 
-If you issue a pull request, add your name here!
+基于原项目 [JDStraughan/html5-snake](https://github.com/JDStraughan/html5-snake) 进行了以下改进：
 
-## License
+- 新增 **暂停功能**：按 P 键可暂停/继续游戏
+- 恢复原始配色方案
 
-MIT License - http://opensource.org/licenses/MIT
+## 许可证
 
-Copyright (c) 2013 Jason D. Straughan
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+MIT License

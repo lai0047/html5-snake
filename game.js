@@ -7,6 +7,7 @@ game = {
   score: 0,
   fps: 8,
   over: false,
+  paused: false,
   message: null,
   
   start: function() {
@@ -21,6 +22,12 @@ game = {
   stop: function() {
     game.over = true;
     game.message = 'GAME OVER - PRESS SPACEBAR';
+  },
+  
+  togglePause: function() {
+    if (game.over) return;
+    game.paused = !game.paused;
+    game.message = game.paused ? 'PAUSED - PRESS P TO RESUME' : null;
   },
   
   drawBox: function(x, y, size, color) {
@@ -168,7 +175,8 @@ var keys = {
   down: [40, 74, 83],
   left: [37, 65, 72],
   right: [39, 68, 76],
-  start_game: [13, 32]
+  start_game: [13, 32],
+  pause: [80]
 };
 
 function getKey(value){
@@ -187,6 +195,8 @@ addEventListener("keydown", function (e) {
       snake.direction = lastKey;
     } else if (['start_game'].indexOf(lastKey) >= 0 && game.over) {
       game.start();
+    } else if (['pause'].indexOf(lastKey) >= 0) {
+      game.togglePause();
     }
 }, false);
 
@@ -196,11 +206,13 @@ var requestAnimationFrame = window.requestAnimationFrame ||
 
 function loop() {
   if (game.over == false) {
-    game.resetCanvas();
-    game.drawScore();
-    snake.move();
-    food.draw();
-    snake.draw();
+    if (!game.paused) {
+      game.resetCanvas();
+      game.drawScore();
+      snake.move();
+      food.draw();
+      snake.draw();
+    }
     game.drawMessage();
   }
   setTimeout(function() {
