@@ -3,29 +3,35 @@
 <head>
 <meta charset="utf-8" />
 <title>贪吃蛇游戏</title>
-<!--[if IE]>
-<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-<![endif]-->
 <link rel="stylesheet" href="page.css" type="text/css">
 </head>
 <body>
 
 <h1>贪吃蛇</h1>
-<p>经典贪吃蛇游戏的 HTML5 版本。</p>
 
-<div>
-  <canvas id="the-game" width="320" height="240">
+<div class="scoreboard">
+  <div class="score-item">
+    <span class="score-label">当前分数</span>
+    <span class="score-value" id="current-score">0</span>
+  </div>
+  <div class="score-item">
+    <span class="score-label">最高记录</span>
+    <span class="score-value" id="high-score">0</span>
+  </div>
 </div>
 
-<p>使用 方向键、WASD 或 HJKL 控制蛇的移动方向。</p>
+<div class="game-container">
+  <canvas id="the-game" width="320" height="240"></canvas>
+</div>
 
-<p>食物可能出现在蛇身下方，移动蛇身即可发现。</p>
+<div class="controls-info">
+  <p>使用 方向键、WASD 或 HJKL 控制蛇的移动方向。</p>
+  <p>吃掉食物来增长身体，每吃 5 个食物速度会加快。</p>
+  <p>按 <strong>P</strong> 键暂停 / 继续游戏。</p>
+</div>
 
-<p>吃掉食物来增长身体，每吃 5 个食物速度会加快。</p>
+<p class="credit">基于 <a href="https://github.com/JDStraughan/html5-snake">JDStraughan</a> 的项目修改 | <a href="https://github.com/lai0047">lai0047</a></p>
 
-<p>按 <strong>P</strong> 键暂停 / 继续游戏。</p>
-
-<p>基于 <a href="http://JDStraughan.com">JDStraughan</a> 的项目修改 | <a href="https://github.com/lai0047">lai0047</a></p>
 <script type="text/javascript" src="game.js"></script>
 </body>
 </html>

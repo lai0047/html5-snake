@@ -1,18 +1,98 @@
 article, aside, details, figcaption, figure, footer, header,
-hgroup, menu, nav, section { 
-  display: block; 
+hgroup, menu, nav, section {
+  display: block;
 }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-  background-color: #CCC;
+  background-color: #1a1a2e;
+  color: #e0e0e0;
+  font-family: 'Microsoft YaHei', sans-serif;
+  min-height: 100vh;
+  text-align: center;
 }
+
 h1 {
   text-align: center;
+  padding: 20px 0 10px;
+  color: #00ff88;
+  font-size: 2em;
+  text-shadow: 0 0 10px rgba(0, 255, 136, 0.3);
 }
-p {
-  text-align: center;
+
+/* ===== 计分板 ===== */
+.scoreboard {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin: 10px auto 20px;
 }
+
+.score-item {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 10px 25px;
+  min-width: 140px;
+}
+
+.score-label {
+  display: block;
+  font-size: 13px;
+  color: #888;
+  margin-bottom: 5px;
+}
+
+.score-value {
+  display: block;
+  font-size: 28px;
+  font-weight: bold;
+  color: #00ff88;
+  font-family: 'Courier New', monospace;
+}
+
+/* ===== 游戏容器 ===== */
+.game-container {
+  position: relative;
+  display: inline-block;
+  margin: 0 auto;
+}
+
 canvas {
   display: block;
-  margin: 0 auto;
-  background-color: #666;
+  background-color: #16213e;
+  border: 2px solid #0f3460;
+  border-radius: 5px;
+}
+
+/* ===== 操作说明 ===== */
+.controls-info {
+  max-width: 500px;
+  margin: 15px auto;
+}
+
+.controls-info p {
+  font-size: 14px;
+  color: #888;
+  line-height: 1.8;
+}
+
+.controls-info strong {
+  color: #00ff88;
+}
+
+/* ===== 底部署名 ===== */
+.credit {
+  font-size: 12px;
+  color: #555;
+  margin: 15px 0 20px;
+}
+
+.credit a {
+  color: #0f3460;
+  text-decoration: none;
 }
